@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "claude-pdf2md-ocr"
-version = "0.0.1"
+version = "0.0.2"
 description = "OCR plugin for claude-pdf2md — recognise text in scanned PDFs via Tesseract (and other backends) and feed it into the existing PDF→Markdown pipeline."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -12,7 +12,7 @@ license = { text = "MIT" }
 authors = [{ name = "skippdot", email = "skippdot@gmail.com" }]
 keywords = ["pdf", "markdown", "ocr", "tesseract", "claude", "scanned"]
 dependencies = [
-    "claude-pdf2md>=0.1.1",
+    "claude-pdf2md>=0.1.2",
     "pytesseract>=0.3.10",
     "Pillow>=10.0",
     "wordfreq>=3.0",

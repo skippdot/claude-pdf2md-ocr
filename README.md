@@ -28,23 +28,59 @@ on scanned documents the same way it works on native PDFs.
 
 Tesseract must be installed separately.
 
+### macOS
+
 ```bash
-# macOS
 brew install tesseract tesseract-lang     # ships 100+ language packs
-
-# Debian / Ubuntu
-sudo apt-get install tesseract-ocr tesseract-ocr-ukr tesseract-ocr-rus \
-                     tesseract-ocr-ces tesseract-ocr-eng
-
-# verify
 tesseract --list-langs | grep -E '^(ukr|rus|ces|eng)$'
 ```
 
-## Install
+### Debian / Ubuntu
 
 ```bash
-pip install claude-pdf2md-ocr                             # once on PyPI
+sudo apt-get install tesseract-ocr tesseract-ocr-ukr tesseract-ocr-rus \
+                     tesseract-ocr-ces tesseract-ocr-eng
+tesseract --list-langs | grep -E '^(ukr|rus|ces|eng)$'
+```
+
+### Windows
+
+1. Download the UB Mannheim Tesseract installer:
+   **<https://github.com/UB-Mannheim/tesseract/wiki>** (64-bit recommended).
+2. During installation, expand **"Additional language data (download)"**
+   and tick **Ukrainian**, **Russian**, **Czech**, **English** (or whichever
+   languages your documents use).
+3. Add the install directory to `PATH` (default:
+   `C:\Program Files\Tesseract-OCR`). The installer offers a checkbox; if
+   missed, set it manually in *System Properties → Environment Variables*.
+4. Verify in a fresh PowerShell:
+
+   ```powershell
+   tesseract --version
+   tesseract --list-langs
+   ```
+
+## Install
+
+### macOS / Linux
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install claude-pdf2md-ocr                               # once on PyPI
 # or, while the package is still a prototype:
+pip install git+https://github.com/skippdot/claude-pdf2md-ocr
+```
+
+### Windows
+
+```powershell
+# Python 3.10+ from python.org with "Add Python to PATH" checked
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+
+pip install claude-pdf2md-ocr
+# or the git variant:
 pip install git+https://github.com/skippdot/claude-pdf2md-ocr
 ```
 
