@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.coverage
+.tox/
+.DS_Store
+.vscode/
+.idea/
+
+# Local conversion artefacts
+output*.md
+ocr_output*.md
+assets*/
+ocr_assets*/
+diff*/
